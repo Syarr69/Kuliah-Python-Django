@@ -1,0 +1,11 @@
+from django.contrib import admin
+from django.urls import path, include
+
+#!tambahkan import untuk mengambil method index
+from . import views
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', views.index()),
+    path('about/', include('about/urls'),)
+]
